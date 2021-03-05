@@ -1,20 +1,6 @@
 version: '3.7'
 services:
-  ratings:
-    image: ghcr.io/pizzahuhthp9/details
+  details:
+    image: details
     ports:
       - "8080:8080"
-    environment:
-      SERVICE_VERSION: v2
-      MONGO_DB_URL: mongodb://mongodb:27017/ratings
-      MONGO_DB_USERNAME: ratings
-      MONGO_DB_PASSWORD: CHANGEME
-  mongodb:
-    image: bitnami/mongodb:4.4.4-debian-10-r5
-    volumes: 
-      - "./databases:/docker-entrypoint-initdb.d"
-    environment:
-      MONGODB_ROOT_PASSWORD: CHANGEME
-      MONGODB_USERNAME: ratings
-      MONGODB_PASSWORD: CHANGEME
-      MONGODB_DATABASE: ratings
